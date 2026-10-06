@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Random video chat"
+  />
+
+  <title>RandomChat</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header class="topbar">
+
+    <div class="logo">
+      <span class="logo-icon">◉</span>
+      RandomChat
+    </div>
+
+    <div class="online">
+      <span class="online-dot"></span>
+      <span id="onlineCount">0</span>
+      online
+    </div>
+
+  </header>
+
+  <main class="container">
+
+    <section class="videos">
+
+      <div class="video-card">
+
+        <video
+          id="remoteVideo"
+          autoplay
+          playsinline
+        ></video>
+
+        <div id="remotePlaceholder" class="video-placeholder">
+          <div class="avatar">?</div>
+          <p id="statusText">Hamroh qidirilmoqda...</p>
+        </div>
+
+        <div class="video-label">
+          Stranger
+        </div>
+
+      </div>
+
+
+      <div class="video-card">
+
+        <video
+          id="localVideo"
+          autoplay
+          muted
+          playsinline
+        ></video>
+
+        <div class="video-label">
+          You
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="controls">
+
+      <button
+        id="startButton"
+        class="primary-button"
+      >
+        🎥 Start
+      </button>
+
+      <button
+        id="nextButton"
+        class="next-button"
+        disabled
+      >
+        Next →
+      </button>
+
+      <button
+        id="micButton"
+        class="control-button"
+        disabled
+        title="Microphone"
+      >
+        🎤
+      </button>
+
+      <button
+        id="cameraButton"
+        class="control-button"
+        disabled
+        title="Camera"
+      >
+        📹
+      </button>
+
+    </section>
+
+
+    <section class="info">
+
+      <h2>Random video chat</h2>
+
+      <p>
+        Start tugmasini bosing va tasodifiy odam bilan videochat qiling.
+      </p>
+
+      <div class="status-row">
+        <span class="status-circle"></span>
+        <span id="connectionStatus">
+          Kamera yoqilmagan
+        </span>
+      </div>
+
+    </section>
+
+
+    <div
+      id="errorBox"
+      class="error-box hidden"
+    ></div>
+
+  </main>
+
+
+  <footer>
+    <p>
+      RandomChat • Video chat platform
+    </p>
+  </footer>
+
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
