@@ -1,14 +1,9 @@
 {
-  "name": "chatroulette-clone",
-  "version": "1.0.0",
-  "description": "Simple Chatroulette-style random video chat",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
-  },
-  "dependencies": {
-    "express": "^5.1.0",
-    "socket.io": "^4.8.1"
-  }
+  "name":"ruletka",
+  "version":"2.0.0",
+  "description":"Professional random video chat",
+  "main":"server.js",
+  "scripts":{"start":"node server.js","dev":"node server.js"},
+  "engines":{"node":">=18"},
+  "dependencies":{"express":"^5.1.0","socket.io":"^4.8.1"}
 }

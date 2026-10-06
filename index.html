@@ -1,155 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uz">
-<head>
-  <meta charset="UTF-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-
-  <meta
-    name="description"
-    content="Random video chat"
-  />
-
-  <title>RandomChat</title>
-
-  <link rel="stylesheet" href="style.css" />
-</head>
-
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#070a12"><meta name="description" content="Ruletka — tasodifiy video suhbat platformasi"><title>Ruletka — Random Video Chat</title><link rel="stylesheet" href="/style.css"></head>
 <body>
-
-  <header class="topbar">
-
-    <div class="logo">
-      <span class="logo-icon">◉</span>
-      RandomChat
-    </div>
-
-    <div class="online">
-      <span class="online-dot"></span>
-      <span id="onlineCount">0</span>
-      online
-    </div>
-
-  </header>
-
-  <main class="container">
-
-    <section class="videos">
-
-      <div class="video-card">
-
-        <video
-          id="remoteVideo"
-          autoplay
-          playsinline
-        ></video>
-
-        <div id="remotePlaceholder" class="video-placeholder">
-          <div class="avatar">?</div>
-          <p id="statusText">Hamroh qidirilmoqda...</p>
-        </div>
-
-        <div class="video-label">
-          Stranger
-        </div>
-
-      </div>
-
-
-      <div class="video-card">
-
-        <video
-          id="localVideo"
-          autoplay
-          muted
-          playsinline
-        ></video>
-
-        <div class="video-label">
-          You
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <section class="controls">
-
-      <button
-        id="startButton"
-        class="primary-button"
-      >
-        🎥 Start
-      </button>
-
-      <button
-        id="nextButton"
-        class="next-button"
-        disabled
-      >
-        Next →
-      </button>
-
-      <button
-        id="micButton"
-        class="control-button"
-        disabled
-        title="Microphone"
-      >
-        🎤
-      </button>
-
-      <button
-        id="cameraButton"
-        class="control-button"
-        disabled
-        title="Camera"
-      >
-        📹
-      </button>
-
-    </section>
-
-
-    <section class="info">
-
-      <h2>Random video chat</h2>
-
-      <p>
-        Start tugmasini bosing va tasodifiy odam bilan videochat qiling.
-      </p>
-
-      <div class="status-row">
-        <span class="status-circle"></span>
-        <span id="connectionStatus">
-          Kamera yoqilmagan
-        </span>
-      </div>
-
-    </section>
-
-
-    <div
-      id="errorBox"
-      class="error-box hidden"
-    ></div>
-
-  </main>
-
-
-  <footer>
-    <p>
-      RandomChat • Video chat platform
-    </p>
-  </footer>
-
-
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="app.js"></script>
-
-</body>
-</html>
+<div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+<header class="topbar"><a class="brand" href="/" aria-label="Ruletka bosh sahifa"><span class="brand-mark">R</span><span>Ruletka</span></a><div class="online-pill"><span class="live-dot"></span><strong id="onlineCount">0</strong><span>online</span></div></header>
+<main class="shell">
+<section class="hero"><div><span class="eyebrow">RANDOM VIDEO CHAT</span><h1>Yangi odam.<br><span>Yangi suhbat.</span></h1><p class="hero-copy">Start tugmasini bosing va internetdagi tasodifiy suhbatdosh bilan tezkor video chatni boshlang.</p></div><div class="hero-badge"><span>●</span> Live matchmaking</div></section>
+<section class="video-grid" aria-label="Video chat">
+<article class="video-card remote-card"><video id="remoteVideo" autoplay playsinline></video><div id="remotePlaceholder" class="placeholder"><div class="pulse-ring"><div class="avatar">?</div></div><strong id="statusText">Start bosing</strong><span>Hamroh shu yerda ko‘rinadi</span></div><div class="video-top"><span class="camera-state"><i></i> STRANGER</span></div><div class="video-label">Tasodifiy hamroh</div></article>
+<article class="video-card local-card"><video id="localVideo" autoplay muted playsinline></video><div id="localPlaceholder" class="placeholder local-placeholder"><div class="avatar">YOU</div><strong>Kamera tayyor emas</strong><span>Start tugmasini bosing</span></div><div class="video-top"><span class="camera-state"><i></i> YOU</span></div><div class="video-label">Siz</div></article>
+</section>
+<section class="control-panel"><div class="main-actions"><button id="startButton" class="btn btn-primary"><span>▶</span> Start</button><button id="nextButton" class="btn btn-danger" disabled><span>↻</span> Next</button></div><div class="media-actions"><button id="micButton" class="icon-btn" disabled aria-label="Mikrofon">🎤</button><button id="cameraButton" class="icon-btn" disabled aria-label="Kamera">📹</button></div></section>
+<div class="connection"><span id="statusCircle" class="status-dot"></span><span id="connectionStatus">Kamera yoqilmagan</span></div><div id="errorBox" class="error-box hidden" role="alert"></div>
+<section class="tips"><div><b>⚡ Tezkor</b><span>Bir bosishda yangi hamroh toping.</span></div><div><b>🎙️ Boshqaruv</b><span>Mikrofon va kamerani istalgan payt boshqaring.</span></div><div><b>🛡️ Maxfiylik</b><span>Ulanish WebRTC orqali quriladi.</span></div></section>
+</main><footer>Ruletka <span>•</span> Random Video Chat</footer><script src="/socket.io/socket.io.js"></script><script src="/app.js"></script>
+</body></html>
