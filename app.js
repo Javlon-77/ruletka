@@ -1,4 +1,7 @@
-const socket=io({transports:["websocket","polling"]});
+const params=new URLSearchParams(location.search);
+const backendUrl=params.get("server")?.trim().replace(/\/$/,"")||"";
+const isGitHubPages=location.hostname.endsWith(".github.io");
+const socket=io(backendUrl||undefined,{autoConnect:!isGitHubPages,transports:["websocket","polling"]});
 const $=id=>document.getElementById(id);
 const localVideo=$("localVideo"),remoteVideo=$("remoteVideo"),remotePlaceholder=$("remotePlaceholder"),localPlaceholder=$("localPlaceholder");
 const statusText=$("statusText"),startButton=$("startButton"),nextButton=$("nextButton"),micButton=$("micButton"),cameraButton=$("cameraButton");
@@ -70,6 +73,10 @@ async function handleCandidate(candidate){
 }
 
 socket.on("connect",()=>{clearError();console.log("Connected",socket.id)});
+if(isGitHubPages&&!backendUrl){
+  setStatus("Backend server manzili ulanmagan",false);
+  error("GitHub Pages faqat frontendni ishlatadi. Video chat uchun Node.js backend kerak. Backend URL ni ?server=https://... ko‘rinishida bering.");
+}
 socket.on("disconnect",()=>{if(started){setStatus("Server bilan aloqa uzildi",false);remoteState("Server bilan aloqa uzildi")}});
 socket.on("online-count",n=>onlineCount.textContent=n);
 socket.on("waiting",()=>{waiting=true;clearRemote();setStatus("Hamroh qidirilmoqda...",false)});
